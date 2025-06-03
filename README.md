@@ -14,8 +14,10 @@ Inspired by dark-themed platforms like Spotify and the chill vibes of lo-fi musi
 
 ## 🎵 Features
 
-- Displays a curated list of your top music artists
-- Dark, modern design with photo-realistic lo-fi splash screen (optional)
-- Partial responsive layout 
+- Displays a curated list of my top music artists
+- Hover over the artist to find the top song
+- Click the artist profile to play the song on youtube
+- Dark, modern design with photo-realistic lo-fi splash screen
+- Responsive layout 
 
 ---
