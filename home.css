@@ -1,0 +1,91 @@
+    body {
+            background-color: #000000; 
+        }
+        .left-image {
+            float: left; 
+            width: 35%; 
+            max-width: 500px; 
+            height: 680px; 
+            margin-right: 20px; 
+            margin-top: 0%;
+        }
+        .right-content {
+            
+            padding: 10px;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 150px; 
+            overflow: auto;
+        }
+        .right-content h2 {
+            margin-top: 275px; 
+            font-size: 2.3rem;
+            color: #ffffff;
+            text-shadow: 6px 6px 8px rgba(255, 0, 0, 0.3);
+            font-family: 'Casteller', Georgia, cursive;      
+        }
+        .right-content h3 {
+            color: #ffffff; 
+            font-size: 2.5rem;
+            text-shadow: 6px 6px 8px rgba(255, 0, 0, 0.3);
+            font-family: 'Casteller', Georgia, cursive;   
+        }
+        .corner-button {
+            /* Positioning */
+            position: fixed; /* Makes the button stay in place relative to the viewport */
+            bottom: 20px; /* Distance from the top edge of the screen */
+            right: 20px; /* Distance from the right edge of the screen */
+            z-index: 1000; /* Ensures the button appears on top of other content */
+
+            /* Styling */
+            background-color: #393638; 
+            color: #969090; 
+            padding: 12px 25px; /* Vertical and horizontal padding */
+            border: none; /* Removes default button border */
+            border-radius: 8px; /* Slightly rounded corners */
+            font-family: 'Inter', sans-serif; 
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer; /* Changes cursor to a pointer on hover */
+            box-shadow: 0 4px 15px rgba(193, 74, 166, 0.3); /* Subtle shadow for depth */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+        }
+
+        .corner-button:hover {
+            background-color: var(--accent-hover); /* Darker accent color on hover */
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+
+        /* --- New Profile Display Style (Top Right, next to Back Button) --- */
+            .profile-display {
+                position: fixed; /* Stays in place relative to the viewport */
+                top: 25px;       /* Aligns vertically with the back button */
+                right: 10px;    
+                z-index: 1000;   
+
+                display: flex;      /* Use flexbox to align pic and name */
+                align-items: center; /* Vertically center pic and name */
+                gap: 10px;          /* Space between the profile picture and the name */
+                
+                color: var(--text-light);
+                font-family: 'Inter', sans-serif; 
+                font-size: 1.1rem; 
+                font-weight: 600;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                cursor: pointer; 
+                transition: transform 0.2s ease, opacity 0.2s ease; 
+            }
+
+            .profile-display img {
+                width: 40px; 
+                height: 40px; 
+                border-radius: 50%; /* Makes the image perfectly circular */
+                object-fit: cover; /* Ensures the image covers the circle without distortion */
+                border: 2px solid rgba(255, 255, 255, 0.7); /* A subtle white border around the picture */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+            }
+
+            .profile-display:hover {
+                transform: translateY(-2px); /* Slight lift effect on hover */
+            }
+                

@@ -1,0 +1,181 @@
+    :root {
+            --bg-primary: #000000; 
+            --text-light: #ffffff; 
+            --accent-color: #393638; 
+            --accent-hover: #555050; 
+            --button-text-color: #969090; 
+        }
+    .main-image {
+            position: fixed; /* Positions the image relative to the viewport */
+            top: 0;
+            left: 0;
+            width: 100%; /* Makes the image take up 100% of the viewport width */
+            height: 100%; /* Makes the image take up 100% of the viewport height */
+            object-fit: cover; /* Crops the image to cover the area without distortion */
+            object-position: center; /* Centers the image content */
+            z-index: -1; /* Puts the image behind any other content you might add (like text) */
+        }
+
+        /* --- Section for Squares (Now Centered in the Viewport) --- */
+        .squares-section {
+            /* --- Centering Properties --- */
+            position: absolute; /* Takes the element out of normal document flow */
+            top: 50%;          
+            left: 50%;        
+            transform: translate(-50%, -50%); 
+            z-index: 100;     
+
+            text-align: center; /* Centers the heading above the grid */
+            padding: 60px 20px; /* Space above and below the content within the section */
+            max-width: 1200px; /* Limits the width of the section */
+            width: 90%; /* Responsive width */
+            box-sizing: border-box; /* Include padding in width calculation */
+            /* Consider adding a background-color if it overlaps other elements for readability */
+            /* background-color: rgba(0, 0, 0, 0.7); */
+            /* border-radius: 15px; */
+        }
+
+        /* --- CSS Grid for the 2x5 Layout --- */
+        .squares-grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Creates 5 equal-width columns */
+            grid-template-rows: repeat(2, auto); /* Creates 2 rows, height determined by content */
+            gap: 25px; /* Space between the grid items (squares) */
+            
+            justify-content: center; /* Centers grid items within the available space */
+            align-content: center; /* Centers rows vertically if there's extra space */
+            width: fit-content; /* Makes the grid container only as wide as its content */
+            margin: 0 auto; /* Centers the grid container itself */
+            max-width: 100%; /* Ensures it doesn't overflow on small screens */
+        }
+
+        .square-item {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 15px;
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+
+        .square-item:hover {
+            transform: translateY(-5px) scale(1.03);
+            background-color: var(--square-hover-color);
+        }
+        .square-item::after {
+            /* Ensure the content property is set, even if empty, to enable the pseudo-element */
+            content:attr(data-hover-text); 
+            position: absolute;
+            top: 50%;      /* Vertically center the rectangle */
+            left: 50%;     /* Horizontally center the rectangle */
+            transform: translate(-50%, -50%) scale(0); /* Start hidden and scaled down */
+            transform-origin: center center;
+            
+            width: 80%;    /* Width of the rectangle (80% of the square's width) */
+            height: 60%;   /* Height of the rectangle (60% of the square's height) */
+            background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent black background */
+            border-radius: 10px; 
+            
+            display: flex; /* Use flexbox to center text inside */
+            align-items: center; /* Vertically center text */
+            justify-content: center; /* Horizontally center text */
+            
+            color: var(--text-light); /* White text */
+            font-family: 'Inter', sans-serif; 
+            font-size: 1.1rem; 
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
+            text-align: center; 
+            padding: 10px; 
+            box-sizing: border-box; 
+            z-index: 4; /* Ensure it appears above everything else in the square */
+            
+            opacity: 0; /* Hidden by default */
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth animation */
+        }
+
+        /* Show the rectangle on square hover */
+        .square-item:hover::after {
+            transform: translate(-50%, -50%) scale(1); /* Scale up to full size */
+            opacity: 1; /* Fade in */
+        }
+        /* --- Images for Individual Squares --- */
+        .square-1 { background-image: url('images/sq1.jpg'); } 
+        .square-2 { background-image: url('images/sq2.jpg'); }
+        .square-3 { background-image: url('images/sq3.jpg'); }
+        .square-4 { background-image: url('images/sq4.jpg'); }
+        .square-5 { background-image: url('images/sq5.jpg'); }
+        .square-6 { background-image: url('images/sq6.jpg'); }
+        .square-7 { background-image: url('images/sq7.jpg'); }
+        .square-8 { background-image: url('images/sq8.jpg'); }
+        .square-9 { background-image: url('images/sq9.jpg'); }
+        .square-10 { background-image: url('images/sq10.jpg'); }
+
+        /* These properties ensure the image covers the square and looks good */
+        .square-item {
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;            
+        }
+        .bottom-right-text {
+            position: fixed; /* Stays in place relative to the viewport */
+            bottom: 20px;  
+            right: 20px;      
+            z-index: 990;   /* Ensures it's on top of background content, but below buttons/top-left square */
+
+            color: rgba(255, 255, 255, 0.6); /* Slightly transparent white text */
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem; 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        /* --- New Vertical Text Style (Right Side) --- */
+        .vertical-text {
+            position: fixed;  
+            top: 70%;         /* Aligns the top edge of the element to the vertical middle */
+            left: 100px;      
+            z-index: 995;     
+
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-shadow: 1px 1px 3px rgba(146, 121, 185, 0.7);
+            white-space: nowrap; /* Prevent text from wrapping */
+            
+            /* --- TRANSFORM FOR VERTICAL ORIENTATION --- */
+            /* Rotate 90 degrees clockwise to make it read bottom-to-top */
+            /* translateY(-50%) centers it vertically after rotation */
+            transform: translateY(-50%) rotate(270deg); 
+            transform-origin: bottom left; /* Ensures rotation pivots from the bottom-left of the original text box */
+        }
+        /* --- New Back Button Style (Top Right) --- */
+        .back-button {
+            position: fixed; 
+            top: 30px;      
+            right: 30px;    
+            z-index: 1000;   
+            display: inline-flex; /* Use flexbox to align text */
+            align-items: center; /* Vertically center content */
+            gap: 8px; /* Space between arrow and text */
+
+            padding: 10px 18px; /* Padding inside the button */
+            background-color: var(--accent-color); /* Dark button background */
+            color: var(--button-text-color); /* Light gray text color */
+            border: none;
+            border-radius: 25px; 
+            text-decoration: none;
+            font-family: 'Inter', sans-serif; 
+            font-size: 1rem;
+            font-weight: 600; /* Bold text */
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--accent-hover); /* Lighter background on hover */
+            color: var(--text-light); /* White text on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+        }
