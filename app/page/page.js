@@ -1,7 +1,6 @@
-"use client"; // <--- ADD THIS LINE HERE
-
+"use client";
 import Image from 'next/image';
-import './page.css'; // Import the CSS for this page
+import './page.css'; 
 import Link from 'next/link';
 
 export default function DynamicDarkWebsite() {
@@ -24,8 +23,8 @@ export default function DynamicDarkWebsite() {
         src="/images/bg1.jpg"
         alt="Description of your image"
         className="main-image"
-        width={1920} // Adjust as needed for your image's aspect ratio
-        height={1080} // Adjust as needed for your image's aspect ratio
+        width={1920} 
+        height={1080} 
         priority
       />
       <Link href="/" className="back-button">
