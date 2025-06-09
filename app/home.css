@@ -1,7 +1,7 @@
 :root {
-  --accent-hover: #555050;   /* Define this variable here */
-  --text-light: #ffffff;     /* Define this variable here */
-  /* Add other global variables if needed */
+  --accent-hover: #555050;   
+  --text-light: #ffffff;     
+  
 }
 
 body {
