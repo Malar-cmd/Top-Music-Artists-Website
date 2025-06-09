@@ -4,7 +4,7 @@
   --accent-color: #393638;
   --accent-hover: #555050;
   --button-text-color: #969090;
-  --square-hover-color: #6a0dad; /* Define this variable here, example purple */
+  --square-hover-color: #6a0dad;
 }
 
 .main-image {
@@ -51,8 +51,8 @@
   border-radius: 15px;
   transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
   cursor: pointer;
-  position: relative; /* Needed for absolute positioning of ::after */
-  overflow: hidden; /* Ensures hover text stays within bounds */
+  position: relative;
+  overflow: hidden; 
 }
 
 .square-item:hover {
