@@ -8,7 +8,7 @@ Inspired by dark-themed platforms like Spotify and the chill vibes of lo-fi musi
 
 - **HTML5** – for content structure  
 - **CSS3** – for styling with a dark, lo-fi-inspired aesthetic  
-- **No JavaScript** – just simple and fast
+- **JavaScript** – just simple and fast
 
 ---
 
